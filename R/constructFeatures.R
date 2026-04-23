@@ -51,7 +51,7 @@ constructFeatures <- function(bs,
     otherMeths <- getMeth(bs[, -sample], type = "raw")
     otherCovs <- getCoverage(bs[, -sample], type = "Cov")
     #if (class(otherMeths) == "DelayedMatrix") {
-    if (class(otherMeths)[1] == "DelayedMatrix")
+    if (class(otherMeths)[1] == "DelayedMatrix"){
       otherMeths <- as.matrix(otherMeths)
       otherCovs <- as.matrix(otherCovs)
     }
