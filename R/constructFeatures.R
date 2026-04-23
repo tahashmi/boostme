@@ -50,7 +50,8 @@ constructFeatures <- function(bs,
     # need to make a copy of the data 'cause bsseq doesn't allow NAs
     otherMeths <- getMeth(bs[, -sample], type = "raw")
     otherCovs <- getCoverage(bs[, -sample], type = "Cov")
-    if (class(otherMeths) == "DelayedMatrix") {
+    #if (class(otherMeths) == "DelayedMatrix") {
+    if (class(otherMeths)[1] == "DelayedMatrix")
       otherMeths <- as.matrix(otherMeths)
       otherCovs <- as.matrix(otherCovs)
     }
